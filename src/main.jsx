@@ -1,27 +1,9 @@
 // import { StrictMode } from 'react'
-import reactLogo from "./assets/react.svg";
 import { createRoot } from "react-dom/client";
-
+import Header from "./components/Header.jsx";
 import "./index.css";
 // import "./App.css";
 // import App from './App.jsx'
-
-function Header() {
-  return (
-    <>
-      <header className="header">
-        <img src={reactLogo} alt="reactLogo" className="logo" />
-        <nav>
-          <ul className="nav-lists">
-            <li className="nav-list-item">Pricing</li>
-            <li className="nav-list-item">About</li>
-            <li className="nav-list-item">Contact</li>
-          </ul>
-        </nav>
-      </header>
-    </>
-  );
-}
 
 function MainContent() {
   return (
