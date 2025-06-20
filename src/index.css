@@ -20,51 +20,6 @@
   text-align: center;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0%;
-}
-
-.nav-lists {
-  list-style: none;
-  display: flex;
-}
-
-.nav-list-item {
-  margin: 10px;
-  font-size: 1.2em;
-}
-
-.logo {
-  width: 55px;
-}
-
-.card {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  background-color: #1a1a1a;
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-              rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-}
-.divider {
-  border: none;
-  border-top: 2px solid #474545;
-  margin: 20px 0;
-}
-
-footer {
-  margin-top: 2rem;
-  font-size: 0.9em;
-  color: #0e0c0c;
-  background-color: #474545;
-  width: 100%;
-}
-
 a {
   font-weight: 500;
   color: #646cff;
