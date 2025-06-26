@@ -1,4 +1,4 @@
-import location from "../../assets/location.png";
+import location from "../../assets/ChallengeThree/location.png";
 
 const Entry = ({ img, title, country, googleMapsLink, dates, text }) => {
   console.log(img);

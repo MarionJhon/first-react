@@ -1,4 +1,4 @@
-import GlobeLogo from '../../assets/planet-earth.png';
+import GlobeLogo from '../../assets/ChallengeThree/planet-earth.png';
 
 const Header = () => {
     return (

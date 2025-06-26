@@ -23,6 +23,7 @@ body {
 
 article.journal-entry {
   display: flex;
+  margin-bottom: 20px;
 }
 
 article.journal-entry .marker {
