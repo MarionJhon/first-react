@@ -70,9 +70,9 @@ main {
     margin-right: 5px;
 }
 
-main > ul {
+/* main > ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center
-}
+} */
