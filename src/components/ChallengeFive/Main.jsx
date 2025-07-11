@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 
 const Main = () => {
   const [ingredients, setIngredients] = useState([]);
@@ -7,28 +7,37 @@ const Main = () => {
     return <li key={ingredient}>{ingredient}</li>;
   });
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+  const handleSubmit = (formData) => {
     const ingredient = formData.get("ingredient");
-    // ingredients.push(ingredient);
-    // console.log(ingredients);
-    setIngredients(prevIngredients => [...prevIngredients, ingredient]);
-    event.currentTarget.reset();
+    setIngredients((prevIngredients) => [...prevIngredients, ingredient]);
   };
 
   return (
     <main>
-      <form className="ingredient-form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="e.g Oregano"
-          aria-label="Add Ingredient"
-          name="ingredient"
-        />
-        <button type="save">Add Ingredient</button>
-      </form>
-      <ul>{ingredientList}</ul>
+      <div className="main-container">
+        <form className="ingredient-form" action={handleSubmit}>
+          <input
+            type="text"
+            placeholder="e.g Oregano"
+            aria-label="Add Ingredient"
+            name="ingredient"
+          />
+          <button type="save">Add Ingredient</button>
+        </form>
+        {ingredients.length > 0 &&<section>
+          <h2>Ingredients on hand:</h2>
+          <ul className="ingredients-list" aria-live="polite">
+            {ingredientList}
+          </ul>
+          <div className="recipe-container">
+            <div>
+              <h3>Ready for a recipe?</h3>
+              <p>Generate a recipe from your list of ingredients</p>
+            </div>
+            <button>Get a recipe</button>
+          </div>
+        </section>}
+      </div>
     </main>
   );
 };
