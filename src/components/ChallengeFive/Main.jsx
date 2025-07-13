@@ -29,13 +29,13 @@ const Main = () => {
           <ul className="ingredients-list" aria-live="polite">
             {ingredientList}
           </ul>
-          <div className="recipe-container">
+          {ingredients.length === 3 && <div className="recipe-container">
             <div>
               <h3>Ready for a recipe?</h3>
               <p>Generate a recipe from your list of ingredients</p>
             </div>
             <button>Get a recipe</button>
-          </div>
+          </div>}
         </section>}
       </div>
     </main>
