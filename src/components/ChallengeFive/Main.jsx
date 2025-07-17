@@ -1,24 +1,21 @@
 import { useState } from "react";
 import ClaudeRecipe from "./ClaudeRecipe";
 import IngredientsList from "./IngredientsList";
+import {getRecipeFromMistral} from "./ai";
 
 const Main = () => {
-  const [ingredients, setIngredients] = useState([
-    "all the main spices",
-    "pasta",
-    "ground beef",
-    "tomato paste",
-  ]);
-  const [recipeShown, setRecipeShown] = useState(false);
+  const [ingredients, setIngredients] = useState([]);
+  const [recipe, setRecipe] = useState("");
 
   const handleSubmit = (formData) => {
     const ingredient = formData.get("ingredient");
     setIngredients((prevIngredients) => [...prevIngredients, ingredient]);
   };
 
-  const getRecipe = () => {
-    setRecipeShown((prevShow) => !prevShow);
-  };
+  const getRecipe = async () => {
+    const generatedRecipe = await getRecipeFromMistral(ingredients)
+    setRecipe(generatedRecipe);
+  }
 
   return (
     <main>
@@ -33,7 +30,7 @@ const Main = () => {
           <button type="save">Add Ingredient</button>
         </form>
         {ingredients.length > 0 && <IngredientsList getRecipe={getRecipe} ingredients={ingredients}/>}
-        {recipeShown && <ClaudeRecipe />}
+        {recipe && <ClaudeRecipe recipe={recipe}/>}
       </div>
     </main>
   );

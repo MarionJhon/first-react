@@ -86,7 +86,7 @@ ul > li {
   line-height: 28px;
 }
 
-section > h2 {
+section > .title {
   display: flex;
   justify-content: left;
   margin-left: 62px;
@@ -125,4 +125,17 @@ section > h2 {
   font-family: Inter, sans-serif;
   font-size: 0.875rem;
   cursor: pointer;
+}
+
+.suggested-recipe-container {
+  color: #475467;
+  line-height: 28px;
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-left: 62px;
+  width: 594px;
+}
+
+.suggested-recipe-container ul li, .suggested-recipe-container ol li {
+  margin-bottom: 8px;
 }
